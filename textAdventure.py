@@ -15,8 +15,8 @@ def script():
     crowbar = 0
     choice1 = 0
     while choice1 == 0:
-        room1 = raw_input("What do you do? ")
-        if room1 in ("Search", "search","look","Look","look around","Look around","radiator","search radiator","Radiator","Search radiator"):
+        room1 = raw_input("What do you do? ").lower()
+        if room1 in ("search","look","look around","radiator","search radiator",):
             crowbar = 1
             print ""
             print "You decide to check the radiator, as the room seems virtually empty otherwise.."
@@ -29,7 +29,7 @@ def script():
             print "You take the crowbar"
             print ""
             
-        elif room1 in ("open door","Open door","door"):
+        elif room1 in ("open door","door"):
             if crowbar == 1:
                 print ""
                 print "You approach the door and lodge your crowbar between the crack"
@@ -96,11 +96,11 @@ def script():
             print "Open"
             print ""
             while roomb2 == 0: 
-                roombinput = raw_input("What do you do? ")
-                if roombinput in ("Back", "back", "go back", "Go back"):
+                roombinput = raw_input("What do you do? ").lower()
+                if roombinput in ("back", "go back"):
                     print "You decide to head back, not wanting to mess with whatever this contraption controls"
                     roomb = 1
-                elif roombinput in ("open", "Open", "press", "Press", "Press the button", "press the button", "press button" "Press button"):
+                elif roombinput in ("open", "press", "press the button", "press button"):
                     print "You don't know what this will do, but you know it has to be better than seeing all these people trapped."
                     print "You press the button"
                     time.sleep(1)
@@ -150,10 +150,10 @@ def script():
         
     choice2 = 0
     while choice2 == 0:
-        room2 = raw_input("Which door will you try to get to? ")
-        if room2 in ("door a", "a", "forward", "go forward", "Door A", "Door a", "door A", "A", "Go forward", "Forward"):
+        room2 = raw_input("Which door will you try to get to? ").lower()
+        if room2 in ("door a", "a", "forward", "go forward", "straight"):
             choice2 = 1
-        elif room2 in ("door b", "b", "right", "go right", "B", "Door B", "Door b", "door B" "Right", "Go right"):
+        elif room2 in ("door b", "b", "right", "go right"):
             roomBScenario()
         else:
             print "Not an option"
@@ -164,10 +164,10 @@ def script():
     print "You could try to make conversation with it or just sneak up behind with your crowbar"
     murder = 0
     while murder == 0:
-        doora = raw_input("Which will you choose? ")
+        doora = raw_input("Which will you choose? ").lower()
         if murder == 1:
             break
-        elif doora in ("conversation", "make conversation", "Make Conversation", "Make conversation", "talk", "talk to it", "try to talk to it", "Talk"):
+        elif doora in ("conversation", "make conversation", "talk", "talk to it", "try to talk to it"):
             print "You attempt to make conversation with the creature"
             time.sleep(1)
             print ""
@@ -219,7 +219,7 @@ def script():
                 print "The world goes black"
                 print ""
                 script()
-        elif doora in ("sneak", "crowbar", "Crowbar", "sneak up behind", "Sneak up behind", "attack", "attack with crowbar"):
+        elif doora in ("sneak", "crowbar", "sneak up behind", "attack", "attack with crowbar"):
             print ""
             print "Slowly, you sneak up behind the strange creature"
             time.sleep(1)
@@ -251,8 +251,8 @@ def script():
     choice3 = 0
     keys = 0
     while choice3 == 0:
-        room22 = raw_input("What do you do? ")
-        if room22 in ("Search", "search","Search body","search body","body","search creature","creature"):
+        room22 = raw_input("What do you do? ").lower()
+        if room22 in ("search","search body","body","search creature","creature","monster"):
             keys = 1
             print ""
             print "You check the monster's body for anything useful"
@@ -266,7 +266,7 @@ def script():
             print "You take the Keys"
             print ""
             
-        elif room22 in ("open door","Open door","door"):
+        elif room22 in ("open door","door"):
             if keys == 1:
                 print ""
                 print "Using your newly acquired keys, the door swings open"
@@ -284,7 +284,7 @@ def script():
                 print "Maybe there's something else that could help open it?"
                 print ""
                 
-        elif room22 in ("crowbar","use crowbar","Crowbar","Use crowbar"):
+        elif room22 in ("crowbar","use crowbar"):
             print ""
             print "You lodge your crowbar into the crack of the door and begin prying"
             time.sleep(2)
@@ -316,8 +316,8 @@ def script():
     
     room3 = 0
     while room3 == 0: 
-        med = raw_input("What do you do? ")
-        if med in ("help", "Help", "approach", "walk over", "help him"):
+        med = raw_input("What do you do? ").lower()
+        if med in ("help", "approach", "walk over", "help him"):
             room3 = 1
         elif med in ("ignore", "keep going", "exit", "search",):
             print "Please... He'll be back soon, get us out of here!"
@@ -344,8 +344,8 @@ def script():
 
     button = 0
     while button == 0:
-        rog = raw_input("Which button do you press? ")
-        if rog in ("green", "Green", "green button", "Green button", "the green button", "The green button"):
+        rog = raw_input("Which button do you press? ").lower()
+        if rog in ("green", "green button", "the green button"):
             button = 1
             print ""
             print "You press the green button, as he suggests"
@@ -361,7 +361,7 @@ def script():
             print "Upon seeing you and the freed prisoners, his eyes widen"
             time.sleep(1)
             
-        elif rog in ("red", "Red", "red button", "Red button", "the red button", "The red button"):
+        elif rog in ("red", "red button", "the red button"):
             button = 2
             print "Ignoring the instructions of the man strapped to the table, you press the red button"
             time.sleep(2)
@@ -393,9 +393,9 @@ def script():
     print "The creature grabs a syringe off of the table and begins to run towards you"
     sc = 0
     while sc == 0: 
-        syringe = raw_input("Again you must make a quick decision: Attempt to reason with the creature, or Defend yourself with your crowbar? ")
+        syringe = raw_input("Again you must make a quick decision: Attempt to reason with the creature, or Defend yourself with your crowbar? ").lower()
         print ""
-        if syringe in ("reason", "attempt to reason", "Reason", "Attempt to reason with the creature"):
+        if syringe in ("reason", "attempt to reason", "attempt to reason with the creature"):
             print "As you begin to explain that all you want is just to talk"
             print "the creature tackles you and injects you with whatever was in the syringe"
             print time.sleep(2)
@@ -413,7 +413,7 @@ def script():
             print "The world goes black"
             print ""
             script()
-        elif syringe in ("Defend", "defend", "crowbar", "defend with crowbar", "defend yourself with your crowbar"):
+        elif syringe in ("defend", "crowbar", "defend with crowbar", "defend yourself with your crowbar", "defend yourself with crowbar"):
             print "As the creature reaches you, a quick swing of your crowbar shatters it's hand."
             time.sleep(2)
             print ""
